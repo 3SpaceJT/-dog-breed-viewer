@@ -1,0 +1,27 @@
+.section__container {
+  padding-bottom: 30px;
+}
+
+.dog-results {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__img {
+    display: flex;
+    padding: $main-spacing;
+    border: 1px $border-color solid;
+    background-color: black;
+    flex-grow: 1;
+    height: 350px;
+    min-width: 200px;
+  }
+
+  &__description {
+    display: flex;
+    flex-grow: 1;
+    padding: 5px 30px;
+    border-bottom: 1px $border-color solid;
+    margin: $main-spacing;
+  }
+}

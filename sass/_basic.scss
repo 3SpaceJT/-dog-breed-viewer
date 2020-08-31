@@ -1,0 +1,30 @@
+@import "variables";
+
+body {
+  font-family: 'Krona One', sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: black;
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  padding: 20px 60px;
+  color: white;
+}
+
+h2 {
+  padding: $main-spacing;
+}
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  text-align: center;
+  background-color: $primary-color;
+}
