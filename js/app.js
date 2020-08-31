@@ -1,19 +1,32 @@
 import '../sass/style.scss';
 
-const listBreeds = () => {
-    return fetch('https://dog.ceo/api/breeds/list/all')
-        .then(res => res.json())
-        .then(data => {
-            return data.message
-        })
+class DogViewer {
+    constructor() {
+        this.apiUrl = 'https://dog.ceo/api'
+    }
+    listBreeds = () => {
+        return fetch(`${this.apiUrl}/breeds/list/all`)
+            .then(resp => resp.json())
+            .then(data => {
+                return data.message
+            })
+    }
+
+    getRandomImage = () => {
+        return fetch(`${this.apiUrl}/breeds/image/random`)
+            .then(resp => resp.json())
+            .then(data => {
+                return data.message
+            })
+    }
+
+    getRandomImageByBreeds = (breed) => {
+        return fetch(`${this.apiUrl}/breed/${breed}/images/random`)
+            .then(resp => resp.json())
+            .then(data => data.message)
+    }
 }
 
-const getRandomImage = () => {
-    return fetch('https://dog.ceo/api/breeds/image/random')
-        .then(res => res.json())
-        .then(data => {
-            return data.message
-        })
-}
 
-getRandomImage().then(data => console.log(data))
+
+getRandomImage().then(img => document.querySelector('[data-dog-img]').setAttribute('src', img))

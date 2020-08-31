@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "d430d092631b910dfc49";
+/******/ 	var hotCurrentHash = "2de2b7c80cf4cdabba23";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -804,7 +804,7 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ \"./sass/style.scss\");\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./js/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ \"./sass/style.scss\");\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconst listBreeds = () => {\n    return fetch('https://dog.ceo/api/breeds/list/all').then(res => res.json()).then(data => {\n        return data.message;\n    });\n};\n\nconst getRandomImage = () => {\n    return fetch('https://dog.ceo/api/breeds/image/random').then(res => res.json()).then(data => {\n        return data.message;\n    });\n};\n\nconst getRandomImageByBreeds = () => {\n    return fetch();\n};\n\ngetRandomImage().then(img => document.querySelector('[data-dog-img]').setAttribute('src', img));\n\n//# sourceURL=webpack:///./js/app.js?");
 
 /***/ }),
 
