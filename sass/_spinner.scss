@@ -1,0 +1,38 @@
+// .spinner {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 98%;
+//   height: 95%;
+//   background-color: $primary-color;
+//   display: none;
+//   justify-content: center;
+//   align-items: center;
+
+//   &__content {
+//     width: 30px;
+//     height: 30px;
+//     margin: 10px;
+//     background-color: black;
+//     animation: rotatecube 1.2s infinite ease-in-out;
+//   }
+
+//   &--visible {
+//     display: flex;
+//   }
+// }
+
+// @keyframes rotatecube {
+//   0% {
+//     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+//   }
+
+//   50% {
+//     transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+//   }
+
+//   100% {
+//     transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+//   }
+// }

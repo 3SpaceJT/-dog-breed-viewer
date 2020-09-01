@@ -29,14 +29,15 @@ class DogViewer {
         const tile = document.createElement('div')
         tile.classList.add('tiles__tile')
         tile.textContent = `${name}`
-        tile.addEventListener('click', (e) => {
-            e.preventDefault()
+        tile.addEventListener('click', () => {
             this.getRandomImageByBreeds(type)
-                .then(img => this.dogImg.setAttribute('src', img))
-            this.addDescription(name)
+                .then(img => {
+                    this.dogImg.setAttribute('src', img)
+                    this.addDescription(name)
+                })
+            this.smoothScroll()
         })
         this.tiles.appendChild(tile)
-
 
     }
 
@@ -54,14 +55,22 @@ class DogViewer {
             .then(data => {
                 return data.message
             })
+
     };
     addDescription(name) {
         const descrittion = document.querySelector('[data-dog-description]')
         descrittion.textContent = `Here is a random ${name}`
+    };
+    smoothScroll() {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
     }
 
     init() {
-        this.getRandomImage().then(img => this.dogImg.setAttribute('src', img));
+        this.getRandomImage().then(img => { this.dogImg.setAttribute('src', img) });
         this.listBreeds().then(breeds => {
             Object.keys(breeds).forEach(breed => {
                 if (breeds[breed].length === 0) {
