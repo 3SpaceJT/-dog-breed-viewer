@@ -9,11 +9,7 @@ class DogViewer {
     };
 
     listBreeds() {
-        return fetch(`${this.apiUrl}/breeds/list/all`)
-            .then(resp => resp.json())
-            .then(data => {
-                return data.message
-            })
+        return this.fetchData(`${this.apiUrl}/breeds/list/all`)
     };
 
     addBreed(breed, subBreed) {
@@ -42,19 +38,11 @@ class DogViewer {
     }
 
     getRandomImage() {
-        return fetch(`${this.apiUrl}/breeds/image/random`)
-            .then(resp => resp.json())
-            .then(data => {
-                return data.message
-            })
+        return this.fetchData(`${this.apiUrl}/breeds/image/random`)
     };
 
     getRandomImageByBreeds(breed) {
-        return fetch(`${this.apiUrl}/breed/${breed}/images/random`)
-            .then(resp => resp.json())
-            .then(data => {
-                return data.message
-            })
+        return this.fetchData(`${this.apiUrl}/breed/${breed}/images/random`)
 
     };
     addDescription(name) {
@@ -67,6 +55,13 @@ class DogViewer {
             left: 0,
             behavior: 'smooth'
         });
+    }
+    fetchData(url) {
+        return fetch(url)
+            .then(resp => resp.json())
+            .then(data => {
+                return data.message
+            })
     }
 
     init() {
